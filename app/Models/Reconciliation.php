@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-class reconciliations extends Model
+class Reconciliation extends Model
 {
     use HasFactory;
 
@@ -21,12 +21,12 @@ class reconciliations extends Model
 
     public function transfer(): belongsTo
     {
-        return $this->belongsTo(transfers::class);
+        return $this->belongsTo(Transfer::class);
     }
 
     public function sale(): belongsTo
     {
-        return $this->belongsTo(sales::class);
+        return $this->belongsTo(Sale::class);
     }
 
 }

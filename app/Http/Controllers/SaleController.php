@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\reconciliations;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
-class ReconciliationsController extends Controller
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ReconciliationsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(reconciliations $reconciliations)
+    public function show(Sale $sale)
     {
         //
     }
@@ -42,7 +42,7 @@ class ReconciliationsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(reconciliations $reconciliations)
+    public function edit(Sale $sale)
     {
         //
     }
@@ -50,7 +50,7 @@ class ReconciliationsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, reconciliations $reconciliations)
+    public function update(Request $request, Sale $sale)
     {
         //
     }
@@ -58,7 +58,7 @@ class ReconciliationsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(reconciliations $reconciliations)
+    public function destroy(Sale $Sale)
     {
         //
     }
