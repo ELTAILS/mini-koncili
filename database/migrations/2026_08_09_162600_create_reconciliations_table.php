@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('expected_amount', 8, 2);
             $table->decimal('received_amount', 8, 2);
             $table->decimal('difference', 8, 2);
-            $table->integer('reconciled_at')->nullable();
+            $table->dateTime('reconciled_at')->nullable();
             $table->timestamps();
         });
     }

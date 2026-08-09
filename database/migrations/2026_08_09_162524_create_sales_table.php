@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // chave estrangeira para a tabela users e o constrained() cria a relação automaticamente e o onDelete('cascade') garante que, se um usuário for deletado, todas as suas vendas também serão deletadas
-            $table->string('order_code', 100);
-            $table->date('sale_date');
+            $table->string('order_code', 100)->index();
+            $table->dateTime('sale_date');
             $table->decimal('gross_amount', 8, 2);
             $table->decimal('commission_amount', 8, 2);
             $table->decimal('fee_amount', 8, 2);

@@ -86,6 +86,13 @@ já funciona, sem precisar declarar a FK na mão).
 
 - **Backend:** PHP 8+, Laravel, Livewire (não usar controllers tradicionais + Blade puro para telas
   interativas — usar componentes Livewire)
+  - **Atenção — dois estilos convivem no projeto, isso é intencional:** a autenticação (login,
+    registro, forgot-password, etc.) foi gerada pelo Breeze usando **Volt** (componente de arquivo
+    único, em `resources/views/livewire/pages/auth/*.blade.php`) — não mexer nesses arquivos além do
+    necessário, e não reescrever em Livewire clássico. Já os componentes de negócio do projeto
+    (SalesTable, TransfersTable, ReconciliationPanel, Dashboard) são **Livewire clássico** (classe PHP
+    em `app/Livewire/` + view Blade separada). Ao sugerir código novo relacionado ao domínio (vendas,
+    repasses, conciliação), o Copilot deve seguir o padrão clássico, não Volt.
 - **Frontend:** Blade + Tailwind CSS
 - **Interatividade leve:** Alpine.js (`x-data`, `x-show`, `x-transition`) e os recursos nativos do
   Livewire (`wire:loading`, `wire:transition`, `wire:target`) — **sem GSAP ou qualquer outra biblioteca

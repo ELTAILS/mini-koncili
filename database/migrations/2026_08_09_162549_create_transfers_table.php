@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('order_code', 100);
+            $table->string('order_code', 100)->index();
             $table->decimal('amount', 8, 2);
-            $table->date('transfer_date');
+            $table->dateTime('transfer_date');
             $table->timestamps();
         });
     }
