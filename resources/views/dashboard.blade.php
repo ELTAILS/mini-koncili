@@ -14,4 +14,7 @@
             </div>
         </div>
     </div>
+
+    aqui é o dashboard
+
 </x-app-layout>

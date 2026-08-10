@@ -26,4 +26,7 @@
             </div>
         </div>
     </div>
+
+    aqui fica meu perfil
+
 </x-app-layout>
