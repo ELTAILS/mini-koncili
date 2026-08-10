@@ -86,6 +86,13 @@ já funciona, sem precisar declarar a FK na mão).
 
 - **Backend:** PHP 8+, Laravel, Livewire (não usar controllers tradicionais + Blade puro para telas
   interativas — usar componentes Livewire)
+  - **Atenção — dois estilos convivem no projeto, isso é intencional:** a autenticação (login,
+    registro, forgot-password, etc.) foi gerada pelo Breeze usando **Volt** (componente de arquivo
+    único, em `resources/views/livewire/pages/auth/*.blade.php`) — não mexer nesses arquivos além do
+    necessário, e não reescrever em Livewire clássico. Já os componentes de negócio do projeto
+    (SalesTable, TransfersTable, ReconciliationPanel, Dashboard) são **Livewire clássico** (classe PHP
+    em `app/Livewire/` + view Blade separada). Ao sugerir código novo relacionado ao domínio (vendas,
+    repasses, conciliação), o Copilot deve seguir o padrão clássico, não Volt.
 - **Frontend:** Blade + Tailwind CSS
 - **Interatividade leve:** Alpine.js (`x-data`, `x-show`, `x-transition`) e os recursos nativos do
   Livewire (`wire:loading`, `wire:transition`, `wire:target`) — **sem GSAP ou qualquer outra biblioteca
@@ -124,9 +131,16 @@ Ao sugerir código:
 
 ## Escopo do MVP — não expandir
 
-Páginas do sistema: Login/Registro, Dashboard, Vendas, Repasses, Conciliação, Relatório (export CSV),
-Sobre o projeto, e a página bônus Sobre mim. **Página de Perfil/Configurações está fora do escopo** —
-não sugerir criação dela.
+Páginas do sistema: Landing (`/`, une "Sobre o projeto" + "Sobre mim" — ver detalhe abaixo),
+Login/Registro, Dashboard, Vendas, Repasses, Conciliação, Relatório (export CSV). **Página de
+Perfil/Configurações está fora do escopo** — não sugerir criação dela.
+
+**Landing (`/`) — decisão registrada:** em vez de duas páginas separadas ("Sobre o projeto" e "Sobre
+mim" como bônus), as duas foram fundidas na própria rota `/`, substituindo a welcome page padrão do
+Laravel. Estrutura: (1) nome do projeto + frase curta do que é, (2) bloco explicando o problema de
+conciliação e a inspiração no Koncili, (3) bloco "Sobre mim" com nome, curso, stack e links (LinkedIn/
+GitHub/portfólio), (4) botão de destaque para `/login`. Motivo: quem avaliar o projeto vê o contexto
+completo assim que abre o link, sem precisar achar uma rota escondida.
 
 Não sugerir:
 - Novas entidades/tabelas fora de `users`, `sales`, `transfers`, `reconciliations`

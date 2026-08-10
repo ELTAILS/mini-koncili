@@ -1,6 +1,6 @@
-networks: 
+networks:
   myapp:
-    driver: bridge 
+    driver: bridge
 services:
   php_fpm:
     build:
