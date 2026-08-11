@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Auth;
 
-class salePolicy
+class SalePolicy
 {
     /**
      * Determina que o usuário pode visualizar qualquer modelo.
@@ -30,7 +30,7 @@ class salePolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -46,7 +46,7 @@ class salePolicy
      */
     public function delete(User $user, Sale $sale): bool
     {
-        return false;
+        return $user->id === $sale->user_id;
     }
 
     /**
