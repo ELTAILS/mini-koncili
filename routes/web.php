@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\SalesTable;
+use App\Livewire\TransfersTable;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -16,5 +17,9 @@ Route::view('profile', 'profile')
 Route::get('/sales', SalesTable::class)
     ->middleware(['auth', 'verified'])
     ->name('sales');
+
+Route::get('/transfers', TransfersTable::class)
+    ->middleware(['auth', 'verified'])
+    ->name('transfers');
 
 require __DIR__.'/auth.php';

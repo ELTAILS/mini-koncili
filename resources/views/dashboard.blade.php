@@ -10,9 +10,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 {{--A navegação de links do dashboard ficará aqui--}}
                 {{--Copia essa div e coloca as informações do link--}}
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900 border-b border-black">
                     <x-nav-link :href="route('sales')" :active="request()->routeIs('sales')">
                         {{__('Suas vendas')}}
+                    </x-nav-link>
+                </div>
+                <div class="p-6 text-gray-900">
+                    <x-nav-link :href="route('transfers')" :active="request()->routeIs('transfers')">
+                        {{__('Suas transferências')}}
                     </x-nav-link>
                 </div>
             </div>

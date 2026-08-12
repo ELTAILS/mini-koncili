@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Sale;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -14,29 +15,32 @@ class SalesTable extends Component
     //outras propriedades e métodos do componente
     public string $search = '';
     public bool $showModal = false;
-    public ?int $editingId = null;
 
     #[Validate('required|string|max:100')]
     public string $order_code = '';
+
     #[Validate('required|date')]
     public string $sale_date = '';
+
     #[Validate('required|numeric|min:0')]
     public float $gross_amount = 0;
+
     #[Validate('required|numeric|min:0')]
     public float $commission_amount = 0;
+
     #[Validate('required|numeric|min:0')]
     public float $fee_amount = 0;
 
     /*Renderizar a view*/
-    public function render()
+    public function render(): View
     {
-        $sales = Sale::where('user_id', auth()->id())
+        $sales = Sale::where('user_id', Auth::id())
             ->when($this->search, function ($query) {
                 $query->where('order_code', 'like', '%' . $this->search . '%');
             })
             ->get();
 
-        return view('livewire.sales-table', ['sales' => $sales]);
+        return view('livewire.sales-table', compact('sales'));
     }
 
     public function create(): void
@@ -52,7 +56,7 @@ class SalesTable extends Component
         $this->validate();
 
         Sale::create([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'order_code' => $this->order_code,
             'sale_date' => $this->sale_date,
             'gross_amount' => $this->gross_amount,
@@ -64,7 +68,7 @@ class SalesTable extends Component
         $this->showModal = false;
     }
 
-    public function destroy(int $saleId)
+    public function destroy(int $saleId): void
     {
         $sale = Sale::findOrFail($saleId);
 
@@ -73,7 +77,7 @@ class SalesTable extends Component
         $sale->delete();
     }
 
-    private function resetFields()
+    private function resetFields(): void
     {
         $this->order_code = '';
         $this->sale_date = '';

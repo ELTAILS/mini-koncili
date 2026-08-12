@@ -17,6 +17,10 @@ class Transfer extends Model
         'transfer_date',
     ];
 
+    protected $casts = [
+        'transfer_date' => 'datetime',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

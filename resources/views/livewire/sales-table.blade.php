@@ -1,12 +1,11 @@
 <div class="p-4">
     <h1 class="text-xl font-bold text-center mb-4 mt-4">Suas vendas</h1>
     <p class="text-center text-gray-600 mb-4">Aqui estão todas as suas vendas.</p>
-        <div class="mb-4">
-            <input type="text" wire:model.live="search" placeholder="Buscar por pedido..."
-                class="border rounded px-3 py-2">
-            <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded">Nova venda
-        </div>
-    </button>
+    <div class="mb-4">
+        <input type="text" wire:model.live="search" placeholder="Buscar por pedido..."
+            class="border rounded px-3 py-2">
+        <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded">Nova venda</button>
+    </div>
 
     <div class="overflow-x-auto rounded-2xl border border-brand-light bg-white shadow-sm">
         <table class="table-dashboard">
@@ -29,8 +28,8 @@
                             <td>{{ $sale->order_code }}</td>
                             <td>R${{ number_format($sale->gross_amount, 2, ',', '.') }}</td>
                             <td>R${{ number_format($sale->commission_amount, 2, ',', '.') }}</td>
-                            <td>R${{ number_format($sale->fee_amount, 2, ',', '.') }}</td>
-                            <td>{{ $sale->sale_date }}</td>
+                            <td class="text-red-600">R${{ number_format($sale->fee_amount, 2, ',', '.') }}</td>
+                            <td>{{ $sale->sale_date->format('d/m/Y') }}</td>
                             <td>
                                 <button wire:click="destroy({{ $sale->id }})"
                                     wire:confirm="Tem certeza que deseja excluir esta venda?"

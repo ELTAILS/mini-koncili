@@ -18,6 +18,10 @@ class Sale extends Model
         'fee_amount',
     ];
 
+    protected $casts = [
+        'sale_date' => 'datetime',
+    ];
+
     public function user(): belongsTo
     {
         return $this->belongsTo(User::class);
