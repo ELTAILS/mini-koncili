@@ -1,3 +1,4 @@
+@section('title', 'Suas transferências')
 <div class="p-4">
     <h1 class="text-xl font-bold text-center mb-4 mt-4">Suas transferências</h1>
     <p class="text-center text-gray-600 mb-4">Aqui estão todas as suas transferências.</p>

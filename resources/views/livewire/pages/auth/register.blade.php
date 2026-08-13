@@ -36,6 +36,7 @@ new #[Layout('layouts.guest')] class extends Component
     }
 }; ?>
 
+@section('title', 'Cadastro')
 <div>
     <form wire:submit="register">
         <!-- Name -->
