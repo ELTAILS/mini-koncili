@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\ReconciliationPanel;
 use App\Livewire\SalesTable;
 use App\Livewire\TransfersTable;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +22,9 @@ Route::get('/sales', SalesTable::class)
 Route::get('/transfers', TransfersTable::class)
     ->middleware(['auth', 'verified'])
     ->name('transfers');
+
+Route::get('/reconciliation', ReconciliationPanel::class)
+    ->middleware(['auth', 'verified'])
+    ->name('reconciliation');
 
 require __DIR__.'/auth.php';

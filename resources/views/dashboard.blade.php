@@ -15,9 +15,14 @@
                         {{__('Suas vendas')}}
                     </x-nav-link>
                 </div>
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900 border-b border-black">
                     <x-nav-link :href="route('transfers')" :active="request()->routeIs('transfers')">
                         {{__('Suas transferências')}}
+                    </x-nav-link>
+                </div>
+                <div class="p-6 text-gray-900">
+                    <x-nav-link :href="route('reconciliation')" :active="request()->routeIs('reconciliation')">
+                        {{__('Painel de reconciliação')}}
                     </x-nav-link>
                 </div>
             </div>
