@@ -21,20 +21,27 @@ class ReconciliationService
             ->where('order_code', $sale->order_code)
             ->first();
 
-        //Caso a tranferencia não existir
-        if(!$transfer) {
+        $expected_value = $sale->gross_amount - $sale->commission_amount - $sale->fee_amount;
+
+        $reconciliation->sale_id = $sale->id;
+        $reconciliation->expected_amount = $expected_value;
+
+        if (!$transfer) {
             $reconciliation->status = 'pendente';
+            $reconciliation->received_amount = 0;
+            $reconciliation->difference = $expected_value;
             $reconciliation->save();
             return $reconciliation;
         }
 
-        //Mostra o valor liquido
-        $expected_value = $sale->gross_amount - $sale->commission_amount - $sale->fee_amount;
+        $reconciliation->transfer_id = $transfer->id;
+        $reconciliation->received_amount = $transfer->amount;
 
         $difference = abs($expected_value - $transfer->amount);
 
-        if($difference < 0.01) {
+        if ($difference < 0.01) {
             $reconciliation->status = 'conciliado';
+            $reconciliation->difference = 0;
         } else {
             $reconciliation->status = 'divergente';
             $reconciliation->difference = $expected_value - $transfer->amount;

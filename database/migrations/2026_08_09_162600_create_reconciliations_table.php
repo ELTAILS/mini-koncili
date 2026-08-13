@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reconciliations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transfer_id')->constrained('transfers')->onDelete('cascade')->nullable();
+            $table->foreignId('transfer_id')->nullable()->constrained('transfers')->onDelete('cascade');
             $table->foreignId('sale_id')->constrained('sales')->onDelete('cascade');
             $table->string('status', 20);
             $table->decimal('expected_amount', 8, 2);
