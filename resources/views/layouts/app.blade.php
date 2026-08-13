@@ -34,6 +34,10 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <!-- Footer -->
+            <x-footer-auth />
+
         </div>
     </body>
 </html>
