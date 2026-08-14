@@ -15,7 +15,7 @@ class ReconciliationPainel extends Component
 
     public function render(): View
     {
-        return view('livewire.reconciliation-panel');
+        return view('livewire.reconciliation-painel');
     }
 
     /**
