@@ -25,7 +25,7 @@
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$transfer->order_code}}</td>
-                            <td>R${{number_format($transfer->amount, '2' , ',', '.')}}</td>
+                            <td class="td-value-transfer">R${{number_format($transfer->amount, '2' , ',', '.')}}</td>
                             <td>{{$transfer->transfer_date->format('d/m/Y')}}</td>
                             <td>
                                 <button wire:click="destroy({{ $transfer->id }})"
@@ -46,7 +46,7 @@
     </div>
 
         @if ($showModal)
-        <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div wire:transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg p-6 w-full max-w-md">
                 <h2 class="text-lg font-bold mb-4">Nova Tranferencia</h2>
 

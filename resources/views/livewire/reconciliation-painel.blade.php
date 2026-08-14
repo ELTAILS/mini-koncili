@@ -17,7 +17,8 @@
 
     <div class="p-4">
         <button class="btn-reconciliation bg-slate-700 text-center" wire:click="consolidate">
-            Consolidar
+            <span wire:loading.remove wire:target="consolidate">Consolidar</span>
+            <span wire:loading wire:target="consolidate">Carregando...</span>
         </button>
         <small> <br>
             Aperte o botão abaixo para consolidar todas as reconciliações pendentes, caso tenha alguma.

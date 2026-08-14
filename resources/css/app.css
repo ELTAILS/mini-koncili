@@ -54,6 +54,22 @@
     @apply px-4 py-4 text-left align-middle text-text-main;
 }
 
+.table-dashboard td.td-value-gross {
+    @apply font-semibold text-emerald-600;
+}
+
+.table-dashboard td.td-value-commission {
+    @apply font-semibold text-amber-500;
+}
+
+.table-dashboard td.td-value-fee {
+    @apply font-semibold text-red-600;
+}
+
+.table-dashboard td.td-value-transfer {
+    @apply font-semibold text-emerald-600;
+}
+
 .table-dashboard tbody tr td:first-child {
     @apply rounded-l-xl font-semibold text-brand-primary;
 }

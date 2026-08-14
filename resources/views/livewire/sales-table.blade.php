@@ -27,9 +27,9 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $sale->order_code }}</td>
-                            <td>R${{ number_format($sale->gross_amount, 2, ',', '.') }}</td>
-                            <td>R${{ number_format($sale->commission_amount, 2, ',', '.') }}</td>
-                            <td class="text-red-600">R${{ number_format($sale->fee_amount, 2, ',', '.') }}</td>
+                            <td class="td-value-gross">R${{ number_format($sale->gross_amount, 2, ',', '.') }}</td>
+                            <td class="td-value-commission">R${{ number_format($sale->commission_amount, 2, ',', '.') }}</td>
+                            <td class="td-value-fee">R${{ number_format($sale->fee_amount, 2, ',', '.') }}</td>
                             <td>{{ $sale->sale_date->format('d/m/Y') }}</td>
                             <td>
                                 <button wire:click="destroy({{ $sale->id }})"
@@ -50,7 +50,7 @@
     </div>
 
     @if ($showModal)
-        <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div wire:transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg p-6 w-full max-w-md">
                 <h2 class="text-lg font-bold mb-4">Nova venda</h2>
 
