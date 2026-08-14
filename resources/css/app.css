@@ -69,3 +69,23 @@
 .table-dashboard tbody tr:hover {
     @apply bg-brand-light;
 }
+
+.btn-reconciliation {
+    @apply text-white px-4 py-2 rounded transition duration-[0.5s]
+}
+
+.btn-reconciliation:hover {
+    @apply hover:scale-105
+}
+
+.btn-reconciliation:active {
+    @apply active:scale-90
+}
+
+.btn-all:hover {
+    @apply hover:scale-105
+}
+
+.btn-all:active {
+    @apply active:scale-90
+}
