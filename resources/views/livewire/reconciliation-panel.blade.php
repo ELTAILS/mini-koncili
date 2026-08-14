@@ -29,13 +29,13 @@
             </thead>
             <tbody>
                 @if($filter === 'allFilters')
-                    <x-reconciliation-tables.allFilters />
+                    <x-reconciliation-tables.allFilters :reconciliations="$this->allFilters()" />
                 @elseif ($filter === 'reconciledFilter')
-                    <x-reconciliation-tables.reconciledFilter />
+                    <x-reconciliation-tables.reconciledFilter :reconciliations="$this->allFilters()" />
                 @elseif ($filter === 'divergentFilter')
-                    <x-reconciliation-tables.divergentFilter />
+                    <x-reconciliation-tables.divergentFilter :reconciliations="$this->allFilters()" />
                 @elseif ($filter === 'pendantFilter')
-                    <x-reconciliation-tables.pendantFilter />
+                    <x-reconciliation-tables.pendantFilter :reconciliations="$this->allFilters()" />
                 @else
                     <x-reconciliation-tables.unfiltered />
                 @endif
