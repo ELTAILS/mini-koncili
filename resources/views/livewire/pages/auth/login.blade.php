@@ -25,7 +25,8 @@ new #[Layout('layouts.guest')] class extends Component
 }; ?>
 
 @section('title', 'login')
-<div>
+
+<div class="mt-12">
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
