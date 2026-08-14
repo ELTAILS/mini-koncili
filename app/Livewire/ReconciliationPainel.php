@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\Reconciliation;
+use App\Models\Sale;
+use App\Services\ReconciliationService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Livewire\Attributes\Layout;
@@ -11,61 +13,61 @@ use Livewire\Component;
 #[Layout('layouts.app')]
 class ReconciliationPainel extends Component
 {
-    public string $filter = '';
+    public string $filter = 'allFilters';
 
     public function render(): View
     {
         return view('livewire.reconciliation-painel');
     }
 
-    /**
-    * Metodo para alterar os filtros
-    * @param string $f;
-    * @return void
-    */
-    public function changeFilter(string $f): void
+    public function changeFilter(string $filter): void
     {
-        $this->filter = $f;
+        $this->filter = $filter;
     }
 
     /**
-    * Caso filtro todos escolido
-    * @return void
+     * Consolida as vendas do usuário logado e cria ou atualiza as reconciliações correspondentes.
+     * @return void
     */
-    public function allFilters()
+    public function consolidate(): void
     {
-        return $reconciliations = Reconciliation::with('sale')
+        $sales = Sale::where('user_id', Auth::id())->get();
+
+        $service = new ReconciliationService();
+
+        foreach ($sales as $sale) {
+            $reconciliation = Reconciliation::firstOrNew(['sale_id' => $sale->id]);
+            $service->reconcile($sale, $reconciliation);
+        }
+    }
+
+    /**
+     * Retorna as reconciliações do usuário logado, filtradas conforme o filtro atual.
+     */
+    public function getReconciliations()
+    {
+        return Reconciliation::with('sale')
             ->whereHas('sale', function ($query) {
                 $query->where('user_id', Auth::id());
+            })
+            ->when($this->filter !== 'allFilters', function ($query) {
+                $query->where('status', $this->statusFromFilter());
             })
             ->get();
     }
 
     /**
-    * Caso filtro Conciliado escolido
-    * @return void
-    */
-    public function reconciledFilter(): void
+     * Retorna o status correspondente ao filtro atual.
+     * @return string
+     */
+    private function statusFromFilter(): string
     {
+        return match ($this->filter) {
 
-    }
-
-    /**
-    * Caso filtro Divergente escolido
-    * @return void
-    */
-    public function divergentFilter(): void
-    {
-
-    }
-
-    /**
-    * Caso filtro Pendente escolido
-    * @return void
-    */
-    public function pendantFilter(): void
-    {
-
+            'reconciledFilter' => 'conciliado',
+            'divergentFilter' => 'divergente',
+            'pendantFilter' => 'pendente',
+        };
     }
 
 }

@@ -15,6 +15,15 @@
         <button class="btn-reconciliation bg-red-500" wire:click="changeFilter('pendantFilter')">Pendente</button>
     </div>
 
+    <div class="p-4">
+        <button class="btn-reconciliation bg-slate-700 text-center" wire:click="consolidate">
+            Consolidar
+        </button>
+        <small> <br>
+            Aperte o botão abaixo para consolidar todas as reconciliações pendentes, caso tenha alguma.
+        </small>
+    </div>
+
     <div class="overflow-x-auto rounded-2xl border border-brand-light bg-white shadow-sm">
         <table class="table-dashboard">
             <thead>
@@ -28,17 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-                @if($filter === 'allFilters')
-                    <x-reconciliation-tables.allFilters :reconciliations="$this->allFilters()" />
-                @elseif ($filter === 'reconciledFilter')
-                    <x-reconciliation-tables.reconciledFilter :reconciliations="$this->allFilters()" />
-                @elseif ($filter === 'divergentFilter')
-                    <x-reconciliation-tables.divergentFilter :reconciliations="$this->allFilters()" />
-                @elseif ($filter === 'pendantFilter')
-                    <x-reconciliation-tables.pendantFilter :reconciliations="$this->allFilters()" />
-                @else
-                    <x-reconciliation-tables.unfiltered />
-                @endif
+                <x-reconciliation-tables-list :reconciliations="$this->getReconciliations()" />
             </tbody>
         </table>
     </div>
