@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\Models\Reconciliation;
+use App\Observers\ReconciliationObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Registra os serviços da aplicação.
      */
     public function register(): void
     {
@@ -15,10 +17,10 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Aplica o observador de reconciliação.
      */
     public function boot(): void
     {
-        //
+        Reconciliation::observe(ReconciliationObserver::class);
     }
 }
