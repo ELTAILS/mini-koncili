@@ -6,6 +6,11 @@
         </h2>
     </x-slot>
 
+    <div class="py-12 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 tracking-tight mb-3">Bem vindo {{ auth()->user()->name }} ao Dashboard</h1>
+        <p>Atualizado em: {{ now()->format('d/m/Y') }}</p>
+    </div>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

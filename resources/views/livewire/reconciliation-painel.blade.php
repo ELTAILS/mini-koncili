@@ -1,7 +1,7 @@
 @section('title', 'Painel de reconciliação')
 
 <div class="p-4">
-    <h1 class="text-xl font-bold text-center mb-4 mt-4">Painel de Reconciliações</h1>
+    <h1 class="text-3xl text-gray-900 tracking-tight font-bold text-center mb-4 mt-4">Painel de Reconciliações</h1>
 
     <p class="text-center text-gray-600 mb-4">Aqui fica suas reconciliações das suas vendas e transferências</p>
 

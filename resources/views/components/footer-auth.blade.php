@@ -1,5 +1,5 @@
 {{-- Footer para pessoas autenticadas --}}
-<footer id="footer-auth" class="footer-auth mt-10 w-full text-white">
+<footer id="footer-auth" class="footer-auth mt-10 w-full text-white" x-data="{ showTerms: false }">
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div class="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
             <div class="space-y-4">
@@ -82,7 +82,12 @@
         </div>
 
         <div class="mt-7 flex justify-center">
-            <span class="footer-auth__badge">mini-koncili</span>
+            <a href="#" @click.prevent="showTerms = true" class="footer-auth__badge rounded transition-all duration-500 hover:scale-110">Termos de uso</a>
+        </div>
+
+        {{--Modal de termos de uso--}}
+        <div x-show="showTerms" x-cloak>
+            <x-termos-de-uso />
         </div>
     </div>
 </footer>
