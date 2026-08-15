@@ -1,6 +1,11 @@
 @section('title', 'Painel de reconciliação')
 
 <div class="p-4">
+    <div class="mb-4">
+        <a href="{{ route('dashboard') }}" class="inline-flex items-center rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-700">
+            Voltar
+        </a>
+    </div>
     <h1 class="text-3xl text-gray-900 tracking-tight font-bold text-center mb-4 mt-4">Painel de Reconciliações</h1>
 
     <p class="text-center text-gray-600 mb-4">Aqui fica suas reconciliações das suas vendas e transferências</p>

@@ -41,7 +41,7 @@ class ReconciliationObserver
         Cache::forget('total_' . $userId);
         Cache::forget('total_conciliado_' . $userId);
         Cache::forget('total_divergente_' . $userId);
-        Cache::forget('percentual_mes_' . $userId);
+        Cache::forget('total_pending_' . $userId);
     }
 
 }

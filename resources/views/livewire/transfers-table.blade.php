@@ -1,5 +1,10 @@
 @section('title', 'Suas transferências')
 <div class="p-4">
+    <div class="mb-4">
+        <a href="{{ route('dashboard') }}" class="inline-flex items-center rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-700">
+            Voltar
+        </a>
+    </div>
     <h1 class="text-3xl text-gray-900 tracking-tight font-bold text-center mb-4 mt-4">Suas transferências</h1>
     <p class="text-center text-gray-600 mb-4">Aqui estão todas as suas transferências.</p>
     <div class="mb-4">
