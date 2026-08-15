@@ -38,6 +38,7 @@ class ReconciliationObserver
     {
         $userId = $reconciliation->sale->user_id;
 
+        Cache::forget('total_' . $userId);
         Cache::forget('total_conciliado_' . $userId);
         Cache::forget('total_divergente_' . $userId);
         Cache::forget('percentual_mes_' . $userId);

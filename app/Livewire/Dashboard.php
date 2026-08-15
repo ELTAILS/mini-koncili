@@ -16,13 +16,28 @@ class Dashboard extends Component
     {
         $userId = Auth::id();
 
-        $totalConciliado = Cache::remember('total_conciliado_' . $userId, 6000, function () use ($userId){
-            return Reconciliation::whereHas('sale', fn ($q) => $q->where('user_id', $userId))
+        $totalReconciled = Cache::remember('total_' . $userId, 600, function () use ($userId){
+            return Reconciliation::whereHas('sale', fn ($q) => $q->where('user_id', $userId)
+                ->whereMonth('sale_date', now()->month)
+                ->whereYear('sale_date', now()->year)
+            )
+                ->count();
+        });
+
+        $reconciliationsReconciled = Cache::remember('total_conciliado_' . $userId, 600, function () use ($userId){
+            return Reconciliation::whereHas('sale', fn ($q) => $q->where('user_id', $userId)
+                ->whereMonth('sale_date', now()->month)
+                ->whereYear('sale_date', now()->year)
+            )
                 ->where('status', 'conciliado')
                 ->count();
         });
 
-        return view('livewire.dashboard', compact('totalConciliado'));
+        $percentageReconciliations = $totalReconciled > 0
+        ? ($reconciliationsReconciled / $totalReconciled) * 100
+        : 0;
+
+        return view('livewire.dashboard', compact('percentageReconciliations'));
 
     }
 }

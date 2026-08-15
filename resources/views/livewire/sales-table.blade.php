@@ -63,7 +63,7 @@
 
                     <div class="mb-3">
                         <label>Data da venda</label>
-                        <input type="datetime-local" wire:model="sale_date" class="border rounded w-full px-2 py-1">
+                        <input type="date" wire:model="sale_date" class="border rounded w-full px-2 py-1">
                         @error('sale_date') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
                     </div>
 

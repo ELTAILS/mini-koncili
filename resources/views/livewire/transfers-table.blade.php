@@ -59,7 +59,7 @@
 
                     <div class="mb-3">
                         <label>Data de transferência</label>
-                        <input type="datetime-local" wire:model="transfer_date" class="border rounded w-full px-2 py-1">
+                        <input type="date" wire:model="transfer_date" class="border rounded w-full px-2 py-1">
                         @error('transfer_date') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
                     </div>
 
