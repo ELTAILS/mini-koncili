@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\SaleController;
+use App\Http\Controllers\Api\TransferController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,20 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::delete('/sales/{id}', [SaleController::class, 'destroy'])
         ->name('sales.destroy');
+
+});
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/transfer', [TransferController::class, 'index'])
+        ->name('transfer.index');
+
+    Route::get('/transfer/{id}', [TransferController::class, 'show'])
+        ->name('transfer.show');
+
+    Route::post('/transfer', [TransferController::class, 'store'])
+        ->name('transfer.store');
+
+    Route::delete('/transfer/{id}', [TransferController::class, 'destroy'])
+        ->name('transfer.destroy');
 
 });
