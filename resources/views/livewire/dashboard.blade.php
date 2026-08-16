@@ -99,9 +99,11 @@
         @endif
     </div>
 </div>
-
+@assets
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@endassets
 
+@script
 <script>
     const data = @json($dataReconciliations);
 
@@ -120,3 +122,4 @@
     });
 
 </script>
+@endscript

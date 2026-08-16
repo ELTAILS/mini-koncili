@@ -6,8 +6,14 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReconciliationController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/login', [AuthController::class, 'login'])
-    ->name('login');
+//Para apis que tem apenas uma rota.
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/login', [AuthController::class, 'login'])
+    ->name('api.login');
+
+    Route::get('/reconciliation', [ReconciliationController::class, 'index'])
+    ->name('reconciliation.index');
+});
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/sales', [SaleController::class, 'index'])
@@ -36,10 +42,4 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::delete('/transfer/{id}', [TransferController::class, 'destroy'])
         ->name('transfer.destroy');
-
-    // Reconciliation routes
-
-    Route::get('/reconciliation', [ReconciliationController::class, 'index'])
-        ->name('reconciliation.index');
-
 });
