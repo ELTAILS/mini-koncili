@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\TransferController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReconciliationController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login'])
@@ -35,5 +36,10 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::delete('/transfer/{id}', [TransferController::class, 'destroy'])
         ->name('transfer.destroy');
+
+    // Reconciliation routes
+
+    Route::get('/reconciliation', [ReconciliationController::class, 'index'])
+        ->name('reconciliation.index');
 
 });
