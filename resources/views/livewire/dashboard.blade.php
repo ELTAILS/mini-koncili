@@ -34,7 +34,8 @@
             </div>
         </div>
 
-        <div class="mt-12 mx-auto flex w-full max-w-6xl flex-col items-stretch gap-6 px-4 min-[822px]:flex-row min-[822px]:items-start">
+        @if ($dataReconciliations['total'] > 0)
+            <div class="mt-12 mx-auto flex w-full max-w-6xl flex-col items-stretch gap-6 px-4 min-[822px]:flex-row min-[822px]:items-start">
             {{--Card--}}
             <div class="w-full min-[822px]:w-1/2">
                 <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -91,6 +92,11 @@
                 </div>
             </div>
         </div>
+        @else
+            <h1 class="text-center text-xl mt-12 text-gray-900 tracking-tight mb-3">
+                Nenhum dado registrado para exibir no momento. Por favor, verifique suas vendas e transferências para que possamos gerar o resumo de conciliação.
+            </h1>
+        @endif
     </div>
 </div>
 
