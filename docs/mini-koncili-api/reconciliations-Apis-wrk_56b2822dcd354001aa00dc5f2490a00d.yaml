@@ -1,0 +1,52 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: reconciliations Apis
+meta:
+  id: wrk_56b2822dcd354001aa00dc5f2490a00d
+  created: 1786982697708
+  modified: 1786982697708
+  description: ""
+collection:
+  - url: http://project.test:8000/api/reconciliation
+    name: reconciliations_get
+    meta:
+      id: req_c1769abad174432baa6aff5729c73f52
+      created: 1786982702701
+      modified: 1786982772322
+      isPrivate: false
+      description: ""
+      sortKey: -1786982702701
+    method: GET
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_2069b00883f47bc23c65f21894359e3df75589f8
+    created: 1786982697719
+    modified: 1786982727871
+  cookies:
+    - id: 88fe89d9-3797-4b4c-a216-1d431e41b703
+      key: PHPDEBUGBAR_STACK_DATA
+      value: "%5B%5D"
+      domain: project.test
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_2069b00883f47bc23c65f21894359e3df75589f8
+    created: 1786982697717
+    modified: 1786982697717
+    isPrivate: false

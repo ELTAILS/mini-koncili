@@ -1,0 +1,129 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Transfer Apis
+meta:
+  id: wrk_566c9f604a8b4563b118e7d6d2af518d
+  created: 1786982443641
+  modified: 1786982443641
+  description: ""
+collection:
+  - url: http://project.test:8000/api/transfer
+    name: transfer_get
+    meta:
+      id: req_84cc9adf90934385b432050c48bec9c9
+      created: 1786982448332
+      modified: 1786982788927
+      isPrivate: false
+      description: ""
+      sortKey: -1786982448332
+    method: GET
+    authentication:
+      type: bearer
+      token: Token gerado
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/transfer/2
+    name: transfer_get_unico
+    meta:
+      id: req_df4a3fc201d94c7aa29141b098ef14e2
+      created: 1786982452822
+      modified: 1786982717802
+      isPrivate: false
+      description: ""
+      sortKey: -1786982452822
+    method: GET
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/transfer
+    name: transfer_post
+    meta:
+      id: req_4f9acd4fab584ce1b85c2f122c161e46
+      created: 1786982462299
+      modified: 1786982680396
+      isPrivate: false
+      description: ""
+      sortKey: -1786982462299
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"user_id": 2,
+        	"order_code": "ORD-2026-89412",
+          "amount": 250.00,
+        	"transfer_date": "2026-08-15T13:49:49.000000Z"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: Token gerado
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/transfer/3
+    name: tranfer_delete
+    meta:
+      id: req_dedd41558f7e43538a92c94ad9e1b0fc
+      created: 1786982464773
+      modified: 1786982683517
+      isPrivate: false
+      description: ""
+      sortKey: -1786982464773
+    method: DELETE
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c1c3a682a9400945dbd41c4bab18b32fd833cdad
+    created: 1786982443644
+    modified: 1786982515065
+  cookies:
+    - id: b262ef2c-618a-4ed5-b708-9e71cdfdb0b1
+      key: PHPDEBUGBAR_STACK_DATA
+      value: "%5B%5D"
+      domain: project.test
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_c1c3a682a9400945dbd41c4bab18b32fd833cdad
+    created: 1786982443643
+    modified: 1786982443643
+    isPrivate: false

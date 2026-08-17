@@ -1,0 +1,157 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Sale Apis
+meta:
+  id: wrk_9139c925390040178f635513a7934bf8
+  created: 1786900184331
+  modified: 1786982432752
+  description: ""
+collection:
+  - url: http://project.test:8000/api/sales
+    name: sale_get
+    meta:
+      id: req_6c65fc32f03d4c538653001f6dd3effa
+      created: 1786900184603
+      modified: 1786982548491
+      isPrivate: false
+      description: ""
+      sortKey: -1786900184603
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"user_id": 1,
+          "order_code": "ORD-2026-08-89412",
+          "sale_date": "2026-08-16",
+          "amount": 264.00,
+        	"transfer_date": "2026-07-07T02:10:38.000000Z"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/sales
+    name: sale_post
+    meta:
+      id: req_00dcec7a6adb4845b4b169b7273cd24e
+      created: 1786982005217
+      modified: 1786982410395
+      isPrivate: false
+      description: ""
+      sortKey: -1786982005217
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "order_code": "ORD-2026-89412",
+          "sale_date": "2026-08-16",
+          "gross_amount": 250.00,
+          "commission_amount": 25.00,
+          "fee_amount": 5.50
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/sales/2
+    name: sale_get_unico
+    meta:
+      id: req_e03d6485a6cc48f1b2cfaf2db05623ff
+      created: 1786982011998
+      modified: 1786982403196
+      isPrivate: false
+      description: ""
+      sortKey: -1786941094910
+    method: GET
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://project.test:8000/api/sales/3
+    name: sale_delete
+    meta:
+      id: req_89edebed9066441696d61abcd8e58fcd
+      created: 1786982015165
+      modified: 1786982413654
+      isPrivate: false
+      description: ""
+      sortKey: -1786982015165
+    method: DELETE
+    authentication:
+      type: bearer
+      token: Token gerado
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_67b6758d12aeaf7de5d5540d5c56360572899d0c
+    created: 1786900184335
+    modified: 1786900278311
+  cookies:
+    - id: 4d00d2b7-174a-4a53-a262-f8856063215d
+      key: PHPDEBUGBAR_STACK_DATA
+      value: "%5B%5D"
+      domain: project.test
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+    - id: 3cb7b435-4dc4-4543-a161-e1fb7392405d
+      key: XSRF-TOKEN
+      value: eyJpdiI6InVJa0R1czQwajNnL0pZMythOSs5Wnc9PSIsInZhbHVlIjoiMzVCMEZtOGpZazNrcnlrbmpHUWpGY3Z6YUhuTTEreWVPNm9nNEwzbGVHQmZoaEtTd3BrYitKK1lJeThwVGcySkJRSGlQa0hZd0VCZmFGVDV6aWNUV0I2a2ZjVUlHbkk1SUxBN0xzNi9HZ0NDQXZhaDkxa0lObUhWQXdpb1doMmgiLCJtYWMiOiIwMjAwMWIxNDQxYTgyM2I5Y2ZkOWZiZTc0Yzk1NmFkOWRjY2YyYmMwNzg5MDlkYTBhZjNiMmRlYWRjYmE4ZWU3IiwidGFnIjoiIn0%3D
+      domain: project.test
+      path: /
+      secure: false
+      httpOnly: false
+      hostOnly: true
+    - id: 0a2b16fb-0235-4967-ad6d-07778cfe7861
+      key: mini-koncili-session
+      value: eyJpdiI6Im1NUzFmV3BGODV1N0dITmZWdjBVNHc9PSIsInZhbHVlIjoiZVJmMkhlL3lSeGs4YnVCOXAybW8wWVlzZTdMYVRZVlA0aURaSjRPQlFIREFxc21EUGVXR2lIMEpPL0xpWm9FREhiWTd5amdvU3F5YXpZS0ZmVm9ZS0dHREFvdWxKYnh1Yk05MkNYYWxOY3FwdnRwd1E0YzExdnlqV3lGbTVYem8iLCJtYWMiOiIxYTNkNTljOTVmMzJmZjJkNTMxNTRlZWJlYzIxNGEwY2RhYzMxNjUyY2Q1YTk0NTdjYTA5ODI2OTBjZWZiZjcxIiwidGFnIjoiIn0%3D
+      domain: project.test
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_67b6758d12aeaf7de5d5540d5c56360572899d0c
+    created: 1786900184333
+    modified: 1786900184333
+    isPrivate: false
