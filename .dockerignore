@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+.env.*
+node_modules
+vendor
+storage/logs/*
+docker/mysql/data
+docker/redis/data
+Dockerfile*
+README.md
