@@ -24,22 +24,22 @@
                 </h3>
                 <ul class="space-y-3 text-sm text-white/80">
                     <li>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
+                        <a href="https://www.instagram.com/wagner_da_silva_junior67/" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
                             Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
+                        <a href="https://www.linkedin.com/in/wagner-da-silva-junior/" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
                             LinkedIn
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
+                        <a href="https://github.com/ELTAILS" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
                             GitHub
                         </a>
                     </li>
                     <li>
-                        <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
+                        <a href="https://gitlab.com/ELTAILS" target="_blank" rel="noopener noreferrer" class="footer-guest__social-link">
                             GitLab
                         </a>
                     </li>
@@ -52,13 +52,8 @@
                 </h3>
                 <ul class="space-y-3 text-sm text-white/80">
                     <li>
-                        <a href="mailto:contato@mini-koncili.com.br" class="transition-colors duration-200 hover:text-white">
-                            contato@mini-koncili.com.br
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tel:+551140028922" class="transition-colors duration-200 hover:text-white">
-                            +55 (11) 4002-8922
+                        <a href="mailto:wagner.discord368@gmail.com" class="transition-colors duration-200 hover:text-white" target="_blank" rel="noopener noreferrer">
+                            wagner.discord368@gmail.com
                         </a>
                     </li>
                     <li class="pt-2 text-base font-semibold text-white">
