@@ -10,7 +10,7 @@
     <div class="mb-4">
         <input type="text" wire:model.live="search" placeholder="Buscar por pedido..."
             class="border rounded px-3 py-2">
-        <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded">Nova Tranferencia</button>
+        <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded mt-4">Nova Tranferencia</button>
     </div>
 
     <div class="overflow-x-auto rounded-2xl border border-brand-light bg-white shadow-sm">
@@ -50,7 +50,7 @@
         </table>
     </div>
 
-        @if ($showModal)
+    @if ($showModal)
         <div wire:transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg p-6 w-full max-w-md">
                 <h2 class="text-lg font-bold mb-4">Nova Tranferencia</h2>

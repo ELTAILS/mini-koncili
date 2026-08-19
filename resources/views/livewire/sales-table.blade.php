@@ -10,7 +10,7 @@
     <div class="mb-4">
         <input type="text" wire:model.live="search" placeholder="Buscar por pedido..."
             class="border rounded px-3 py-2">
-        <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded">Nova venda</button>
+        <button wire:click="create" class="bg-blue-700 text-white px-4 py-2 rounded mt-4">Nova venda</button>
     </div>
 
     <div class="overflow-x-auto rounded-2xl border border-brand-light bg-white shadow-sm">
