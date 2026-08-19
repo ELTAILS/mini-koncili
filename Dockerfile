@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gettext-base \
     libonig-dev \
     libzip-dev \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip bcmath \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip bcmath \
     && rm -rf /var/lib/apt/lists/*
 
 
