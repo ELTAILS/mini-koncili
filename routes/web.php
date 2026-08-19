@@ -6,7 +6,7 @@ use App\Livewire\SalesTable;
 use App\Livewire\TransfersTable;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('index');
 
 Route::get('dashboard', Dashboard::class)
     ->middleware(['auth', 'verified'])
