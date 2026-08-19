@@ -20,3 +20,5 @@ php artisan view:cache
 # Render Web Service stays alive.
 php-fpm -D
 exec nginx -g 'daemon off;'
+#Comando para rodar as migrations do banco de dados
+php artisan migrate --force
