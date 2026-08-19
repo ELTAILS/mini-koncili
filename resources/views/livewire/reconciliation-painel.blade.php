@@ -10,7 +10,7 @@
 
     <p class="text-center text-gray-600 mb-4">Aqui fica suas reconciliações das suas vendas e transferências</p>
 
-    <div class="mb-4 flex justify-center items-center gap-1.5 p-4">
+    <div class="mb-4 flex flex-col justify-center md:flex-row md:justify-center md:items-center gap-1.5 p-4">
         <button class="btn-reconciliation bg-blue-500" wire:click="changeFilter('allFilters')">Todos</button>
 
         <button class="btn-reconciliation bg-green-500" wire:click="changeFilter('reconciledFilter')">Conciliado</button>
